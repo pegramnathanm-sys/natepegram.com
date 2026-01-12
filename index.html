@@ -1063,6 +1063,21 @@
                 transform: translate3d(0, 0, 0);
                 backface-visibility: hidden;
                 -webkit-backface-visibility: hidden;
+                /* Prevent animation pausing during scroll */
+                -webkit-perspective: 1000;
+                perspective: 1000;
+                /* Ensure animations stay composited on their own layer */
+                isolation: isolate;
+            }
+
+            /* Optimize scroll performance on mobile */
+            html {
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .page {
+                /* Ensure each page is its own compositing layer */
+                transform: translate3d(0, 0, 0);
             }
 
             /* Reduce button/link sizes in inline styles */
