@@ -964,6 +964,13 @@
             .lighthouse {
                 right: 1rem;
             }
+
+            /* Adjust anchor for tablet screens */
+            .anchor-icon {
+                bottom: 60px;
+                width: 35px;
+                height: 35px;
+            }
         }
 
         /* Mobile Optimization - Phone screens */
@@ -1033,7 +1040,7 @@
 
             /* Adjust anchor position for smaller ocean floor */
             .anchor-icon {
-                bottom: 45px;
+                bottom: 48px;
                 width: 30px;
                 height: 30px;
             }
@@ -1044,6 +1051,18 @@
                 height: 180px;
                 bottom: 80px;
                 right: -180px;
+            }
+
+            /* Fix animation glitching on mobile - force hardware acceleration */
+            .shark,
+            .submarine,
+            .contact-submarine,
+            .contact-whale {
+                will-change: transform;
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+                backface-visibility: hidden;
+                -webkit-backface-visibility: hidden;
             }
 
             /* Reduce button/link sizes in inline styles */
@@ -1105,7 +1124,7 @@
 
             /* Further adjust anchor and submarine for smallest screens */
             .anchor-icon {
-                bottom: 40px;
+                bottom: 46px;
                 width: 25px;
                 height: 25px;
             }
