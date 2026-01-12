@@ -716,50 +716,48 @@
             height: 135px;
             z-index: 1;
             right: -135px;
-            transform: scaleX(-1);
         }
 
         @keyframes swimShark {
             0% {
-                transform: translateX(0) translateY(0);
+                transform: translateX(0) translateY(0) scaleX(-1);
             }
 
             12.5% {
-                transform: translateX(-17.5vw) translateY(-25px);
+                transform: translateX(-17.5vw) translateY(-25px) scaleX(-1);
             }
 
             25% {
-                transform: translateX(-35vw) translateY(0);
+                transform: translateX(-35vw) translateY(0) scaleX(-1);
             }
 
             37.5% {
-                transform: translateX(-52.5vw) translateY(25px);
+                transform: translateX(-52.5vw) translateY(25px) scaleX(-1);
             }
 
             50% {
-                transform: translateX(-70vw) translateY(0);
+                transform: translateX(-70vw) translateY(0) scaleX(-1);
             }
 
             62.5% {
-                transform: translateX(-87.5vw) translateY(-25px);
+                transform: translateX(-87.5vw) translateY(-25px) scaleX(-1);
             }
 
             75% {
-                transform: translateX(-105vw) translateY(0);
+                transform: translateX(-105vw) translateY(0) scaleX(-1);
             }
 
             87.5% {
-                transform: translateX(-122.5vw) translateY(25px);
+                transform: translateX(-122.5vw) translateY(25px) scaleX(-1);
             }
 
             100% {
-                transform: translateX(-140vw) translateY(0);
+                transform: translateX(-140vw) translateY(0) scaleX(-1);
             }
         }
 
         .shark-1 {
             animation: swimShark 20s linear infinite 5s;
-            transform: scaleX(-1);
         }
 
         .submarine {
@@ -769,22 +767,20 @@
             z-index: 3;
             right: -360px;
             bottom: 180px;
-            transform: scaleX(-1);
         }
 
         @keyframes swimSubmarine {
             0% {
-                transform: translateX(0);
+                transform: translateX(0) scaleX(-1);
             }
 
             100% {
-                transform: translateX(-140vw);
+                transform: translateX(-140vw) scaleX(-1);
             }
         }
 
         .submarine-1 {
             animation: swimSubmarine 35s linear infinite 3s;
-            transform: scaleX(-1);
         }
 
         /* Contact page submarine - twice the size of shark (270px), very slow */
@@ -795,22 +791,20 @@
             z-index: 2;
             right: -270px;
             bottom: 120px;
-            transform: scaleX(-1);
         }
 
         @keyframes swimContactSubmarine {
             0% {
-                transform: translateX(0);
+                transform: translateX(0) scaleX(-1);
             }
 
             100% {
-                transform: translateX(calc(-100vw - 540px));
+                transform: translateX(calc(-100vw - 540px)) scaleX(-1);
             }
         }
 
         .contact-submarine-1 {
             animation: swimContactSubmarine 45s linear infinite;
-            transform: scaleX(-1);
         }
 
         .contact-submarine path {
