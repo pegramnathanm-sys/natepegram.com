@@ -720,39 +720,39 @@
 
         @keyframes swimShark {
             0% {
-                transform: translateX(0) translateY(0) scaleX(-1);
+                transform: translateX(0) translateY(0);
             }
 
             12.5% {
-                transform: translateX(-17.5vw) translateY(-25px) scaleX(-1);
+                transform: translateX(-17.5vw) translateY(-25px);
             }
 
             25% {
-                transform: translateX(-35vw) translateY(0) scaleX(-1);
+                transform: translateX(-35vw) translateY(0);
             }
 
             37.5% {
-                transform: translateX(-52.5vw) translateY(25px) scaleX(-1);
+                transform: translateX(-52.5vw) translateY(25px);
             }
 
             50% {
-                transform: translateX(-70vw) translateY(0) scaleX(-1);
+                transform: translateX(-70vw) translateY(0);
             }
 
             62.5% {
-                transform: translateX(-87.5vw) translateY(-25px) scaleX(-1);
+                transform: translateX(-87.5vw) translateY(-25px);
             }
 
             75% {
-                transform: translateX(-105vw) translateY(0) scaleX(-1);
+                transform: translateX(-105vw) translateY(0);
             }
 
             87.5% {
-                transform: translateX(-122.5vw) translateY(25px) scaleX(-1);
+                transform: translateX(-122.5vw) translateY(25px);
             }
 
             100% {
-                transform: translateX(-140vw) translateY(0) scaleX(-1);
+                transform: translateX(-140vw) translateY(0);
             }
         }
 
@@ -795,11 +795,11 @@
 
         @keyframes swimContactSubmarine {
             0% {
-                transform: translateX(0) scaleX(-1);
+                transform: translateX(0);
             }
 
             100% {
-                transform: translateX(calc(-100vw - 540px)) scaleX(-1);
+                transform: translateX(calc(-100vw - 540px));
             }
         }
 
@@ -1050,21 +1050,11 @@
                 right: -180px;
             }
 
-            /* Fix animation glitching on mobile - force hardware acceleration */
-            .shark,
-            .submarine,
-            .contact-submarine,
+            /* Adjust whale position to avoid overlapping contact text */
             .contact-whale {
-                will-change: transform;
-                -webkit-transform: translate3d(0, 0, 0);
-                transform: translate3d(0, 0, 0);
-                backface-visibility: hidden;
-                -webkit-backface-visibility: hidden;
-                /* Prevent animation pausing during scroll */
-                -webkit-perspective: 1000;
-                perspective: 1000;
-                /* Ensure animations stay composited on their own layer */
-                isolation: isolate;
+                top: -5%;
+                width: 350px;
+                height: 350px;
             }
 
             /* Optimize scroll performance on mobile */
@@ -1146,6 +1136,12 @@
                 height: 150px;
                 bottom: 70px;
                 right: -150px;
+            }
+
+            .contact-whale {
+                top: -10%;
+                width: 300px;
+                height: 300px;
             }
         }
     </style>
@@ -1508,7 +1504,7 @@
 
         <!-- Shark -->
         <div class="shark shark-1" style="top: 80%;">
-            <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" transform="scale(-1, 1)" style="transform: scaleX(-1);">
                 <path
                     d="M47.0879 179.03C66.4208 178.409 84.6789 187.59 101.68 195.952C151.857 220.625 232.212 288.373 292.749 254.886C302.751 249.353 371.287 209.39 363.364 197.699C359.105 191.421 337.266 189.971 312.755 189.017C182.249 183.936 118.112 186.513 37 206.452"
                     stroke-opacity="0.9" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" />
@@ -1786,7 +1782,7 @@
 
         <!-- Contact Submarine -->
         <div class="contact-submarine contact-submarine-1">
-            <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" style="transform: scaleX(-1);">
                 <path
                     d="M43.3252 239.768C72.7365 236.126 100.343 205.529 126.88 200.224C156.411 194.323 376.233 189.119 381.321 224.704C383.558 240.339 379.926 258.269 366.242 267.385C337.21 286.721 179.562 292.892 143.215 286.841C115.975 282.305 66.1265 248.523 49.6044 241.649"
                     stroke="#000000" stroke-opacity="0.9" stroke-width="16" stroke-linecap="round"
