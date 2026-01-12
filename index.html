@@ -934,6 +934,160 @@
         .ocean-floor path {
             fill: #000000;
         }
+
+        /* Mobile Optimization - Tablet and below */
+        @media screen and (max-width: 1024px) {
+            h1 {
+                font-size: 5rem;
+                letter-spacing: 0.1em;
+            }
+
+            .tagline {
+                font-size: 1.25rem;
+            }
+
+            h2 {
+                font-size: 1.75rem;
+            }
+
+            .compass-btn,
+            .lighthouse {
+                width: 60px;
+                height: 60px;
+                top: 1rem;
+            }
+
+            .compass-btn {
+                left: 1rem;
+            }
+
+            .lighthouse {
+                right: 1rem;
+            }
+        }
+
+        /* Mobile Optimization - Phone screens */
+        @media screen and (max-width: 768px) {
+            .page {
+                padding: 1.5rem 1rem;
+            }
+
+            h1 {
+                font-size: 3rem;
+                letter-spacing: 0.08em;
+                margin-bottom: 0.75rem;
+            }
+
+            .tagline {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .compass-btn,
+            .lighthouse {
+                width: 50px;
+                height: 50px;
+                top: 0.75rem;
+            }
+
+            .compass-btn {
+                left: 0.75rem;
+            }
+
+            .lighthouse {
+                right: 0.75rem;
+            }
+
+            /* Optimize waves and boats for mobile */
+            .waves {
+                bottom: 150px;
+                height: 80px;
+            }
+
+            .boat {
+                bottom: 160px;
+                width: 80px;
+                height: 80px;
+            }
+
+            .boat-2 {
+                bottom: 160px;
+                width: 50px;
+                height: 50px;
+            }
+
+            .boat-3 {
+                bottom: 155px;
+                width: 55px;
+                height: 55px;
+            }
+
+            .ocean-floor {
+                height: 100px;
+            }
+
+            /* Reduce button/link sizes in inline styles */
+            a[style*="font-size: 1.5rem"],
+            a[style*="font-size: 1.8rem"] {
+                font-size: 1.2rem !important;
+                padding: 0.875rem 1.5rem !important;
+            }
+
+            p[style*="font-size: 2rem"] {
+                font-size: 1.4rem !important;
+                line-height: 1.6 !important;
+                margin-bottom: 1.5rem !important;
+            }
+
+            p[style*="font-size: 3rem"] {
+                font-size: 1.75rem !important;
+                margin-bottom: 1.5rem !important;
+            }
+        }
+
+        /* Mobile Optimization - Small phones */
+        @media screen and (max-width: 480px) {
+            h1 {
+                font-size: 2.25rem;
+                letter-spacing: 0.05em;
+            }
+
+            .tagline {
+                font-size: 0.9rem;
+            }
+
+            h2 {
+                font-size: 1.25rem;
+            }
+
+            .page {
+                padding: 1rem 0.75rem;
+            }
+
+            .compass-btn,
+            .lighthouse {
+                width: 45px;
+                height: 45px;
+            }
+
+            a[style*="font-size"] {
+                font-size: 1rem !important;
+                padding: 0.75rem 1.25rem !important;
+            }
+
+            p[style*="font-size: 2rem"] {
+                font-size: 1.25rem !important;
+            }
+
+            p[style*="font-size: 3rem"] {
+                font-size: 1.5rem !important;
+            }
+        }
     </style>
 </head>
 
