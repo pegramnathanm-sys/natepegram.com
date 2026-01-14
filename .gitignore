@@ -32,3 +32,6 @@ Temporary Items
 # Logs
 *.log
 npm-debug.log*
+
+# SEO Documentation (local only)
+SEO-OPTIMIZATION.md
