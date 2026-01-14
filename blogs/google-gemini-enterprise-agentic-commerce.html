@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Google's Gemini Enterprise for Agentic Commerce | Nate Pegram</title>
+
+  <meta name="description"
+    content="Google's Gemini Enterprise for Customer Experience brings agentic solutions to shopping and customer experience with CX Agent Studio, Agent Assist, and Vertex AI Search.">
+  <meta name="keywords"
+    content="agentic commerce, gemini enterprise, google, cx agent studio, vertex ai search, agent assist">
+  <meta name="author" content="Nate Pegram">
+  <link rel="canonical" href="https://natepegram.com/blogs/google-gemini-enterprise-agentic-commerce.html" />
+
+  <!-- Favicons -->
+  <link rel="icon" href="../favicons/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../favicons/apple-touch-icon.png">
+
+  <meta property="og:title" content="Google's Gemini Enterprise for Agentic Commerce">
+  <meta property="og:description"
+    content="Breaking down Google's Gemini Enterprise for Customer Experience and what it means for agentic commerce.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://natepegram.com/blogs/google-gemini-enterprise-agentic-commerce.html">
+  <meta property="og:image" content="https://natepegram.com/favicons/og-image.png">
+  <meta property="article:published_time" content="2026-01-13">
+  <meta property="article:author" content="Nate Pegram">
+
+  <!-- Structured Data (JSON-LD) for Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Google's Gemini Enterprise for Agentic Commerce",
+    "description": "Breaking down Google's Gemini Enterprise for Customer Experience and what it means for agentic commerce with CX Agent Studio, Agent Assist, and Vertex AI Search.",
+    "image": "https://natepegram.com/favicons/og-image.png",
+    "author": {
+      "@type": "Person",
+      "@id": "https://natepegram.com/#person",
+      "name": "Nate Pegram",
+      "url": "https://natepegram.com/"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Nate Pegram",
+      "url": "https://natepegram.com/"
+    },
+    "datePublished": "2026-01-13",
+    "dateModified": "2026-01-13",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://natepegram.com/blogs/google-gemini-enterprise-agentic-commerce.html"
+    },
+    "keywords": ["agentic commerce", "gemini enterprise", "google", "cx agent studio", "vertex ai search", "agent assist"]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/sans/style.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #ffffff;
+      color: #000000;
+      font-family: 'Geist Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.5s ease, color 0.5s ease;
+      min-height: 100vh;
+    }
+
+    /* Dark Mode Styles */
+    body.dark-mode {
+      background: #000000;
+      color: #ffffff;
+    }
+
+    /* Lighthouse - exact copy from main site */
+    .lighthouse {
+      position: fixed;
+      top: 1.5rem;
+      right: 1.5rem;
+      width: 70px;
+      height: 70px;
+      cursor: pointer;
+      z-index: 1001;
+      background: transparent;
+      border: none;
+      padding: 0;
+      transition: transform 0.2s ease;
+    }
+
+    .lighthouse:hover {
+      transform: scale(1.15);
+    }
+
+    .lighthouse svg {
+      width: 100%;
+      height: 100%;
+      transition: fill 0.5s ease;
+    }
+
+    body.dark-mode .lighthouse svg {
+      fill: #ffffff;
+    }
+
+    /* Header */
+    header {
+      padding: 2rem;
+      padding-right: 6rem;
+    }
+
+    .home-link {
+      font-size: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      transition: opacity 0.3s ease;
+      font-family: 'Patrick Hand', 'Geist Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    .home-link:hover {
+      opacity: 0.7;
+    }
+
+    /* Article */
+    article {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 2rem;
+      padding-top: 1rem;
+    }
+
+    .post-header {
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .post-date {
+      font-size: 0.9rem;
+      opacity: 0.6;
+      margin-bottom: 1rem;
+    }
+
+    .post-title {
+      font-size: 2.5rem;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .post-subtitle {
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
+
+    /* Post Content */
+    .post-content {
+      font-size: 1.15rem;
+      line-height: 1.9;
+    }
+
+    .post-content p {
+      margin-bottom: 1.5rem;
+    }
+
+    .post-content h2 {
+      font-size: 1.8rem;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .post-content h3 {
+      font-size: 1.4rem;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .post-content a {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .post-content a:hover {
+      opacity: 0.7;
+    }
+
+    .post-content ul,
+    .post-content ol {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+    }
+
+    .post-content li {
+      margin-bottom: 0.5rem;
+    }
+
+    .post-content blockquote {
+      border-left: 3px solid currentColor;
+      padding-left: 1.5rem;
+      margin: 2rem 0;
+      font-style: italic;
+      opacity: 0.9;
+    }
+
+    .post-content code {
+      background: rgba(0, 0, 0, 0.1);
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.95em;
+    }
+
+    body.dark-mode .post-content code {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .post-content pre {
+      background: rgba(0, 0, 0, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin-bottom: 1.5rem;
+    }
+
+    body.dark-mode .post-content pre {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .post-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin: 2rem 0;
+    }
+
+    .image-caption {
+      text-align: center;
+      font-size: 0.9rem;
+      opacity: 0.7;
+      margin-top: -1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Footer */
+    footer {
+      max-width: 700px;
+      margin: 4rem auto 2rem;
+      padding: 2rem;
+      text-align: center;
+      border-top: 1px solid currentColor;
+      opacity: 0.6;
+      font-family: 'Patrick Hand', 'Geist Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    footer a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Back to top */
+    .back-link {
+      display: inline-block;
+      margin-top: 3rem;
+      padding: 0.75rem 1.5rem;
+      border: 1px solid currentColor;
+      border-radius: 20px;
+      text-decoration: none;
+      color: inherit;
+      transition: opacity 0.3s ease;
+      font-family: 'Patrick Hand', 'Geist Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    .back-link:hover {
+      opacity: 0.7;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Lighthouse dark mode toggle -->
+  <button class="lighthouse" onclick="toggleDarkMode()">
+    <svg fill="#000000" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+      <g>
+        <path
+          d="M17.439,33.337c-0.542,0-0.987-0.434-1-0.979c-0.012-0.552,0.426-1.009,0.978-1.021l12.842-0.279    c0.562,0.018,1.01,0.427,1.021,0.979s-0.426,1.01-0.979,1.021l-12.841,0.279C17.454,33.337,17.446,33.337,17.439,33.337z" />
+        <path
+          d="M29.165,24.962H17.639c-0.29,0-0.565-0.126-0.755-0.345s-0.275-0.51-0.234-0.797c0.14-0.982,0.192-1.983,0.243-2.951    c0.116-2.213,0.225-4.303,1.395-5.732c0.804-0.982,0.805-1.805,0.806-2.847c0-0.492,0.001-1,0.088-1.546    c-0.043-0.107-0.169-0.306-0.249-0.43c-0.119-0.186-0.229-0.364-0.304-0.524c-0.154-0.327-0.12-0.712,0.089-1.006    c1.619-2.277,3.465-2.717,4.699-2.739c1.982,0.012,3.97,1.247,5.454,3.389c0.314,0.454,0.201,1.077-0.252,1.392    c-0.456,0.313-1.079,0.2-1.393-0.253c-1.107-1.598-2.5-2.52-3.822-2.527c-0.929-0.003-1.861,0.474-2.661,1.393    c0.258,0.421,0.529,0.956,0.422,1.567c-0.072,0.407-0.072,0.835-0.072,1.287c-0.001,1.148-0.002,2.577-1.258,4.112    c-0.754,0.921-0.843,2.611-0.945,4.569c-0.034,0.649-0.068,1.313-0.129,1.988h10.405c0.553,0,1,0.447,1,1    S29.718,24.962,29.165,24.962z" />
+        <path
+          d="M5.434,17.981c-0.463,0-0.878-0.323-0.978-0.794c-0.114-0.541,0.232-1.071,0.773-1.185l10.608-2.232    c0.539-0.112,1.071,0.232,1.185,0.772c0.114,0.541-0.232,1.071-0.772,1.185L5.641,17.96C5.571,17.975,5.502,17.981,5.434,17.981z" />
+        <path
+          d="M14.928,12.12c-0.107,0-0.217-0.018-0.324-0.054L4.832,8.716C4.309,8.536,4.031,7.968,4.21,7.445    c0.179-0.522,0.747-0.799,1.27-0.622l9.772,3.351c0.522,0.18,0.801,0.748,0.622,1.271C15.731,11.859,15.343,12.12,14.928,12.12z" />
+        <path
+          d="M42.844,18.261c-0.096,0-0.193-0.014-0.29-0.043l-9.213-2.791c-0.528-0.16-0.827-0.719-0.667-1.247    c0.16-0.527,0.718-0.827,1.247-0.667l9.213,2.791c0.528,0.16,0.827,0.719,0.667,1.247C43.67,17.982,43.273,18.261,42.844,18.261z" />
+        <path
+          d="M32.451,42.498c-0.229,0-0.456-0.078-0.641-0.231l-3.124-2.605c-0.313,0.162-0.629,0.34-0.939,0.515    c-1.252,0.705-2.562,1.438-3.932,1.357c-1.453-0.079-2.718-0.94-3.833-1.7c-0.227-0.154-0.446-0.303-0.653-0.436    c-0.268,0.142-0.539,0.3-0.805,0.454c-1.086,0.63-2.215,1.287-3.411,1.15c-1.471-0.159-2.84-0.84-4.164-1.498    c-0.393-0.195-0.791-0.394-1.197-0.581l-3.218,2.071c-0.464,0.298-1.083,0.164-1.382-0.3s-0.165-1.083,0.299-1.382l3.672-2.363    c0.279-0.179,0.629-0.209,0.934-0.079c0.61,0.261,1.201,0.554,1.782,0.843c1.22,0.606,2.373,1.18,3.489,1.301    c0.546,0.046,1.385-0.425,2.191-0.893c0.462-0.268,0.939-0.545,1.439-0.772c0.287-0.13,0.618-0.119,0.894,0.033    c0.41,0.224,0.82,0.503,1.254,0.798c0.9,0.613,1.921,1.308,2.817,1.357c0.807,0.025,1.793-0.514,2.842-1.104    c0.533-0.3,1.083-0.609,1.654-0.866c0.348-0.155,0.758-0.102,1.051,0.145l3.046,2.541l3.909-2.605    c0.46-0.307,1.08-0.182,1.387,0.277c0.307,0.46,0.182,1.081-0.277,1.387l-4.53,3.02C32.837,42.442,32.644,42.498,32.451,42.498z" />
+        <path
+          d="M16.601,40.595c-0.448,0-0.856-0.304-0.969-0.758c-0.023-0.094-0.056-0.187-0.087-0.28    c-0.105-0.313-0.235-0.702-0.204-1.149c0.42-5.61,0.77-9.92,1.136-13.975c0.058-0.637,0.548-1.021,0.873-1.274    c0.078-0.062,0.158-0.12,0.22-0.183c0.39-0.392,1.023-0.392,1.415-0.002c0.391,0.39,0.392,1.022,0.002,1.414    c-0.116,0.116-0.259,0.231-0.403,0.345c-0.045,0.035-0.092,0.069-0.134,0.104c-0.357,3.979-0.702,8.223-1.113,13.717    c0.001,0.058,0.063,0.244,0.105,0.367c0.049,0.145,0.096,0.289,0.132,0.433c0.134,0.536-0.192,1.079-0.729,1.213    C16.762,40.585,16.681,40.595,16.601,40.595z" />
+        <path
+          d="M34.188,12.12c-0.445,0-0.851-0.299-0.968-0.75c-0.138-0.535,0.185-1.08,0.719-1.219l8.654-2.234    c0.535-0.136,1.08,0.184,1.219,0.719c0.138,0.535-0.185,1.08-0.719,1.219l-8.654,2.234C34.355,12.11,34.271,12.12,34.188,12.12z" />
+        <path
+          d="M31.396,40.595c-0.513,0-0.949-0.392-0.995-0.912c-0.086-0.97-0.161-1.941-0.236-2.912    c-0.168-2.15-0.341-4.374-0.623-6.535c-0.273-2.1-0.479-4.769-0.678-7.35c-0.201-2.629-0.411-5.347-0.69-7.446    c-0.073-0.548,0.312-1.051,0.859-1.123c0.554-0.068,1.051,0.313,1.123,0.859c0.286,2.154,0.498,4.9,0.703,7.557    c0.196,2.555,0.4,5.197,0.666,7.245c0.289,2.212,0.464,4.462,0.634,6.638c0.074,0.965,0.149,1.929,0.234,2.892    c0.049,0.551-0.358,1.036-0.908,1.084C31.455,40.594,31.426,40.595,31.396,40.595z" />
+        <path
+          d="M21.83,16.57c-0.51,0-0.986-0.089-1.447-0.174c-0.191-0.036-0.381-0.071-0.572-0.099    c-0.547-0.078-0.927-0.584-0.849-1.131s0.588-0.927,1.131-0.85c0.218,0.031,0.437,0.071,0.656,0.112    c0.408,0.076,0.791,0.156,1.135,0.14c1.757-0.037,3.512-0.109,5.266-0.182l1.978-0.079c0.56-0.028,1.017,0.409,1.037,0.961    c0.021,0.552-0.409,1.017-0.961,1.037l-1.972,0.079c-1.768,0.073-3.535,0.146-5.304,0.184C21.895,16.57,21.862,16.57,21.83,16.57z    " />
+        <path
+          d="M20.509,11.841c-0.511,0-0.947-0.39-0.995-0.909c-0.051-0.55,0.354-1.036,0.904-1.087l0.9-0.085    c0.73-0.069,1.459-0.14,2.191-0.191c1.02-0.074,2.042-0.137,3.064-0.198l1.411-0.086c0.56-0.021,1.025,0.385,1.061,0.936    s-0.384,1.025-0.936,1.061l-1.416,0.087c-1.014,0.061-2.027,0.122-3.04,0.195c-0.717,0.052-1.431,0.12-2.145,0.188l-0.909,0.086    C20.57,11.84,20.539,11.841,20.509,11.841z" />
+        <path
+          d="M40.598,42.271c-0.235,0-0.467-0.025-0.691-0.079l-0.399-0.091c-1.389-0.312-3.975-0.891-3.283-4.005    c0.12-0.539,0.657-0.872,1.193-0.76c0.539,0.12,0.879,0.654,0.76,1.193c-0.228,1.023-0.013,1.221,1.768,1.619l0.426,0.098    c0.447,0.102,1.179-0.114,1.712-0.74c0.357-0.424,0.991-0.471,1.409-0.114c0.421,0.357,0.472,0.989,0.114,1.409    C42.817,41.729,41.674,42.271,40.598,42.271z" />
+        <path
+          d="M27.209,15.749c-0.519,0-0.956-0.399-0.996-0.925l-0.278-3.628c-0.042-0.551,0.371-1.031,0.922-1.073    c0.55-0.047,1.03,0.37,1.072,0.921l0.278,3.63c0.042,0.55-0.37,1.03-0.921,1.072C27.26,15.748,27.234,15.749,27.209,15.749z" />
+      </g>
+    </svg>
+  </button>
+
+  <header>
+    <a href="../index.html" class="home-link">Nate Pegram</a>
+  </header>
+
+  <article>
+    <div class="post-header">
+      <p class="post-date">January 13, 2026</p>
+      <h1 class="post-title">Google's Gemini Enterprise for Agentic Commerce</h1>
+      <p class="post-subtitle">What Gemini Enterprise signals about the next phase of agentic commerce</p>
+    </div>
+
+    <div class="post-content">
+
+      <p>
+        Now that a few days have passed, which in agentic commerce time is about a whole year worth of updates, I wanted
+        to revisit and spend time going over the updates that I believe to be the most monumental from Google:
+      </p>
+
+      <p>
+        <strong>Gemini Enterprise for Customer Experience (a LOT going on here)</strong>
+      </p>
+
+      <p>
+        Most notably:
+      </p>
+
+      <ul>
+        <li>Customer Experience Agent Studio</li>
+        <li>Agent Assist</li>
+        <li>Vertex AI Search</li>
+      </ul>
+
+      <p>
+        <a href="https://blog.google/products/ads-commerce/agentic-commerce-ai-tools-protocol-retailers-platforms/">Alongside
+          the UCP announcement from Sunday</a>, we received a parallel release and announcement of the <a
+          href="https://cloud.google.com/products/gemini-enterprise-for-customer-experience">Gemini
+          Enterprise for Customer Experience</a>, which aims to bring agentic solutions to shopping and customer
+        experience
+        across a large amount of vertical applications for businesses, notably retailers and restaurants as well.
+      </p>
+
+      <p>
+        This agentic solution looks to verticalize the entire customer lifecycle journey, from discovery to
+        post-purchase, to returns, support, and I am sure many other interesting abstractions of the agents.
+      </p>
+
+      <p>
+        What Google has done is taken agentic capabilities that offer personalization at scale, given those technologies
+        to retailers and businesses in a way that is drag-and-drop to build workflows, noting that "employees of any
+        skill level can launch sophisticated AI with near-zero human engineering," and have done it on top of UCP.
+      </p>
+
+      <p>
+        <em>I think that is absolutely incredible.</em>
+      </p>
+
+      <p>
+        They are taking the capabilities of tools like Claude Code and Cursor, applying these tools to agentic commerce,
+        and are doing so at an enterprise level. And unfortunately, given that all of these tools across the platform
+        are leveraging UCP, I am sure many different individual agentic commerce shopping, support, sales, etc. agents
+        might no longer be the choice to enterprises given the compatibility of these across their ecosystem, but that
+        is a future conversation that takes place once we understand whether or not enterprises/mid-market are adopting
+        this protocol in mass.
+      </p>
+
+      <p>
+        Maybe a few months pass and the announcement and technology were more hype than most believed them to be, but I
+        just can't see that reality. Everyone is trying to figure out how to stay ahead and vigilant, especially with
+        AI-era discoverability, and if Google has developed the protocol to enable this, why not take advantage? More
+        tools in the toolkit.
+      </p>
+
+      <h2>CX Agent Studio</h2>
+
+      <p>
+        This IMO is the coolest announcement, and really speaks to the capabilities of drag-and-drop workflows for
+        developing highly personalized conversational agents through a platform that Google created.
+      </p>
+
+      <p>
+        And you have to watch the <a href="https://www.youtube.com/watch?v=jqjlqUiwuTg">demo that Google uploaded on
+          YouTube</a>. They use
+        AI generated material, not surprising, but the conversation that they showcase with the "Customer Service Agent"
+        of a shoe company speaks to the capabilities of these agents, which are multimodal: speech, video, text.
+      </p>
+
+      <p>
+        In the demo with a customer speaking to the agent looking for a better shoe, the agent recommends a shoe based
+        on a video of the runner's gait, its internal knowledge graph, and the customer's purchase history. That is
+        legitimate multimodality.
+      </p>
+
+      <img src="https://storage.googleapis.com/support-kms-prod/hHRtFW2bYLYKtVlMI9r0EoxA3MUC0U9v1dHs"
+        alt="Example of Google's Business Agent">
+      <p class="image-caption">Example of Google's Business Agent</p>
+
+      <p>
+        Not only are you building the agent in the agent studio, but you can evaluate it as well, and then deploy via
+        Google Cloud (not sure about other cloud services). They showcase in the demo an analytics platform for the
+        agents, where you are able to run scenarios, view how the agent performs over multiple iterations of the same
+        requests, and iterate on this historical data. I mean they have really gone the full mile as it relates to
+        shopping agents.
+      </p>
+
+      <p>
+        Within the agent personalization are guardrails as well that go over safety preferences/personalization
+        preferences that can prevent dangerous content, harassment, etc., which I imagine for most brands, they would
+        use the guardrails in a strict way, but potentially some brands might be more lenient with the guardrails given
+        the individual brand persona that they promote.
+      </p>
+
+      <p>
+        On the Google Agent Studio website, there are links to learn more about creating an agent application,
+        evaluating your agent, and deploying your agent, but unfortunately I was getting a 404 error for each link. I
+        would really love to be able to play within this sandbox and get a better hands on idea of what the
+        drag-and-drop build is like.
+      </p>
+
+      <p>
+        They promote it as a solution that does not require an engineering background, and if that is the case, this
+        will allow teams that are outside of engineering's scope to build agents for their organizations, without
+        needing to wait on engineering's priority to meet their demand.
+      </p>
+
+      <h2>Agent Assist</h2>
+
+      <p>
+        Agent Assist is also a really cool development of theirs for Customer Support training, enablement, as well as
+        live translation, again trained on a company's internal documentation and knowledge.
+      </p>
+
+      <p>
+        <a href="https://www.youtube.com/watch?v=FgStP8WEMxQ">They have also included a YouTube demo</a>, which I
+        encourage you to take a look at if it is relevant.
+      </p>
+
+      <p>
+        One of the features, AI Coach, is a live conversational feedback agent that can help drive your customer support
+        team to follow conversational flow and support in a way that is aligned with your internal SOPs. The coach is
+        actively viewing the conversation, evaluating the input from the customer, providing suggestions as the output,
+        and even giving suggestions to upsell, which I think is actually incredible.
+      </p>
+
+      <p>
+        They're enabling customer support teams to be their sales team, especially after resolving some sort of
+        discrepancy with the customer. This is enabling the frontline IMO.
+      </p>
+
+      <p>
+        AI Trainer is essentially a simulated customer interaction that customer support agents can use to train and
+        develop their understanding of the internal knowledge base/SOPs as it relates to interaction with customers. The
+        training provides feedback based on the responses that are given by the agent, which I imagine is incredibly
+        beneficial, especially to larger organizations when they are training their team. Love a cool, simulated
+        environment.
+      </p>
+
+      <p>
+        Live translation is exactly what it sounds like. Incredible feature for enabling teams globally to be able to
+        scale up their help to people all over the world. Gone are the days of only being able to work with a customer
+        in your same region.
+      </p>
+
+      <p>
+        All together, super cool developments, and again, I am sure there are at least a handful of startups that are
+        going to become obsolete given these developments, but that all comes down to adoption, of course.
+      </p>
+
+      <h2>Vertex AI Search</h2>
+
+      <p>
+        This is the part of the stack that quietly turns "AI agents are coming" into "our site actually converts when
+        the query gets weird." And I can only imagine that some of these user queries are lines and lines of text, with
+        different specifications, quirks/requirements, that LLMs need to be good at deciphering.
+      </p>
+
+      <p>
+        Vertex AI Search for commerce is Google basically productizing the hard parts of e-commerce search and
+        recommendation into a fully managed, AI-first search layer that's tuned for retail catalogs, not generic
+        document retrieval. Their positioning is pretty direct: "turn search into sales," with personalized and
+        intuitive shopping experiences that are optimized for conversions and revenue.
+      </p>
+
+      <blockquote>
+        This is not "semantic search as a feature." It's search + ranking + catalog enrichment + merchandising controls,
+        packaged as something you can actually operate day to day.
+      </blockquote>
+
+      <p>
+        Here are some of the capabilities:
+      </p>
+
+      <ul>
+        <li>
+          <strong>Commerce-tuned relevance that understands intent, not just keywords</strong>. Google calls out
+          "commerce-tuned
+          relevance LLMs" that "truly understand what customers are looking for." Translation: you're not relying on
+          brittle filters or exact-match attributes when the shopper (or agent) asks for something like "running shoes
+          for flat feet that won't destroy my knees."
+        </li>
+        <li>
+          <strong>Multi-turn refinement</strong>, like a shopping conversation instead of a dead-end search bar. They
+          explicitly call out
+          guiding users to refine and narrow broad queries through back-and-forth conversation. This is what matters in
+          the agentic commerce era, because agent prompts are rarely clean and are usually a pile of constraints from
+          the user.
+        </li>
+        <li>
+          Conversational Commerce agent that can switch modes intelligently. This agent uses Google's search expertise
+          plus Gemini to guide discovery via natural conversation, and it can switch between "traditional product
+          search" and "conversational interactions" based on intent classification. That matters because not every query
+          needs a chat. Sometimes the best UX is still a fast ranked list. The win is knowing when to do which.
+        </li>
+        <li>
+          <strong>Personalized search + recommendations</strong>, optimized for your KPIs. Google emphasizes
+          personalization using
+          natural language processing plus "web signals" and "Knowledge Graphs," with results and recommendations tuned
+          to your catalog and business objectives (conversion rate, CTR, revenue per session). And they explicitly frame
+          recommendations as deployable across web, mobile apps, email, kiosks, and even call center contexts.
+        </li>
+        <li>
+          <strong>Merchandising control for business teams</strong>, not just engineers. This is a HUGE win. Their
+          merchandising console
+          is positioned as a way for business users to launch promos, tune rankings, reroute results when items are out
+          of stock, and quickly test strategies.
+        </li>
+        <li>
+          <strong>Catalog improvements and enrichment to increase discoverability</strong>. Google says they can
+          natively enrich your
+          catalog by combining Google Shopping web crawlers with their understanding of web content and Vision AI models
+          to generate better attributes and taxonomy for retrieval. This is one of those features that might have a real
+          effect on startups operating in this space, but again, we need to see what adoption actually looks like.
+        </li>
+      </ul>
+
+      <p>
+        If I had to simplify it: Vertex AI Search becomes relevant the moment your shopping experience breaks under
+        modern intent.
+      </p>
+
+      <p>
+        Searches like...
+      </p>
+
+      <p>
+        "I need a carry-on that fits under most seats, opens flat, has a laptop sleeve, and doesn't scream business
+        traveler" or "protein powder that doesn't upset my stomach, not artificial sweeteners, and ships by Friday."
+      </p>
+
+      <p>
+        Google is explicitly pitching this as a system that can serve those channels, not just the site search box.
+      </p>
+
+      <h2>Takeaways</h2>
+
+      <h3>Product Data</h3>
+
+      <p>
+        I still think that this is the main takeaway. Agentic commerce is here, it is a defined channel, and companies
+        should evaluate how they can improve their revenue, conversion, etc. in the agentic commerce channel.
+      </p>
+
+      <p>
+        If there was any hesitation to work on data hygiene as it relates to SKUs, now is the time to act, REGARDLESS of
+        working within the Google solutions. We understand that prompt queries are so much more specific than the "red
+        fitness running shoe" that someone might be prompting.
+      </p>
+
+      <p>
+        Does your product data take this into consideration? How many product attributes can signal agentic discovery to
+        your product? What is the context in which someone might be looking for your products?
+      </p>
+
+      <h3>Agentic Readiness</h3>
+
+      <p>
+        Agentic readiness follows the same principles as product/data readiness, but this goes a step further involving
+        UCP, ACP, MCP, etc., taking the time to understand and work with these technologies to benefit your products
+        within agentic discovery in this AI-era.
+      </p>
+
+      <p>
+        The easiest first step is making sure that these agents aren't being blocked on your website immediately. Access
+        is the first check on the checklist to ensure that you are at least participating within the agentic commerce
+        channel. If these agents can't access your site, more than likely they aren't accessing your product data, and
+        that is probably intentional.
+      </p>
+
+      <p>
+        There are some really cool companies that are operating in the space of KYA, or Know-Your-Agent, which are
+        trying to identify agentic traffic from bad actors such as bots, etc.
+      </p>
+
+      <h3>Keep Learning</h3>
+
+      <p>
+        Learning is my last takeaway, but that's more so just a reminder to myself to stay curious and learn as updates
+        come out. There are many, MANY moments where I feel as though I am falling behind, especially in the agentic
+        commerce world, and that's why I will link some resources that I follow to stay up-to-date in the fun,
+        fast-paced world of agentic commerce.
+      </p>
+
+      <h3>Sources</h3>
+
+      <ul>
+        <li><a
+            href="https://www.googlecloudpresscorner.com/2026-01-11-Google-Cloud-Brings-Shopping-and-Customer-Service-Together-with-Gemini-Enterprise-for-Customer-Experience">Google
+            Cloud Press Release</a></li>
+        <li><a href="https://cloud.google.com/agent-assist">Google Agent Assist</a></li>
+        <li><a href="https://cloud.google.com/products/gemini-enterprise-for-customer-experience/agent-studio">Gemini
+            Enterprise Agent Studio</a></li>
+        <li><a href="https://cloud.google.com/solutions/vertex-ai-search-commerce">Vertex AI Search</a></li>
+        <li><a
+            href="https://blog.google/products/ads-commerce/agentic-commerce-ai-tools-protocol-retailers-platforms/">Google
+            Agentic Commerce Protocol</a></li>
+        <li><a
+            href="https://www.paymentsdive.com/news/fis-teams-with-visa-mastercard-on-agentic-commerce/809472/">Payments
+            Dive</a></li>
+        <li><a href="https://www.humansecurity.com/">Human Security</a></li>
+        <li><a href="https://www.linkedin.com/pulse/googles-ucp-what-means-agentic-commerce-nate-pegram-0utc/">LinkedIn
+            Post</a></li>
+      </ul>
+      <p class="post-subtitle" , p style="text-align: center;"><strong>*posted originally on LinkedIn - <a
+            href="https://www.linkedin.com/pulse/googles-gemini-enterprise-agentic-commerce-nate-pegram-mae3c/">link</a>*</strong>
+      </p>
+
+      <h3>Resources</h3>
+
+      <ul>
+        <li><a href="https://www.retailgentic.com/">Retailgentic</a></li>
+      </ul>
+
+    </div>
+
+    <div style="text-align:center;">
+      <a href="../blogs.html" class="back-link">← back home</a>
+    </div>
+  </article>
+
+  <footer>
+    <p>Nate Pegram · <a href="mailto:pegramnathanm@gmail.com">pegramnathanm@gmail.com</a></p>
+  </footer>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+      localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+    }
+
+    // Check for saved dark mode preference
+    if (localStorage.getItem('darkMode') === 'true') {
+      document.body.classList.add('dark-mode');
+    }
+  </script>
+</body>
+
+</html>

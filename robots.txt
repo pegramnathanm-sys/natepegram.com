@@ -1,0 +1,12 @@
+# robots.txt for natepegram.com
+
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Disallow system files
+Disallow: /.git/
+Disallow: /.DS_Store
+
+# Sitemap location
+Sitemap: https://natepegram.com/sitemap.xml
