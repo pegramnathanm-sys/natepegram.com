@@ -38,3 +38,7 @@ SEO-OPTIMIZATION.md
 
 # Personal TODO list (local only)
 TODO.md
+
+# Environment variables
+.env
+.env.*
