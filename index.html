@@ -1230,7 +1230,7 @@
         <!-- Stars container - only visible in dark mode -->
         <div class="stars-container" id="stars-container"></div>
 
-        <h1 class="typing" id="name"></h1>
+        <h1 class="typing" id="name">Nate Pegram</h1>
         <p class="tagline">Enthusiast of Agentic AI, Agentic Commerce, & GTM</p>
         <div class="scroll-indicator"
             onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
@@ -1852,6 +1852,7 @@
             const nameElement = document.getElementById('name');
             const text = 'Nate Pegram';
             let index = 0;
+            nameElement.textContent = '';
 
             function typeWriter() {
                 if (index < text.length) {
