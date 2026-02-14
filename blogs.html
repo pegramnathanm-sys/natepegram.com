@@ -59,6 +59,25 @@
     }
     </script>
 
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://natepegram.com/"
+      }, {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://natepegram.com/blogs.html"
+      }]
+    }
+    </script>
+
     <link rel="preload" href="fonts/PatrickHand-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <style>
         @font-face {
